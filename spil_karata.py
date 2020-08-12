@@ -23,17 +23,18 @@ class Spil():
         a = random.randint(4, 40)
         deo_za_talon = self.karte[0:a]
         deo_za_deljenje = self.karte[a:]
-        karte_i1 = []
-        karte_i2 = []
-        talon = []
-        talon.append(random.sample(deo_za_talon, 4))
-        karte_i1.append(random.sample(deo_za_deljenje, 6))
-        deo_za_deljenje = [x for x in deo_za_deljenje if x not in karte_i1[0]]
-        karte_i2.append(random.sample(deo_za_deljenje, 6))
-        deo_za_deljenje = [x for x in deo_za_deljenje if x not in karte_i2[0]]
-        deo_za_talon = [x for x in deo_za_talon if x not in talon[0]]
+        karte_i1 = random.sample(deo_za_deljenje, 6)
+        deo_za_deljenje = [x for x in deo_za_deljenje if x not in karte_i1]
+        karte_i2 = random.sample(deo_za_deljenje, 6)
+        deo_za_deljenje = [x for x in deo_za_deljenje if x not in karte_i2]
+        talon = random.sample(deo_za_talon, 4)
+        deo_za_talon = [x for x in deo_za_talon if x not in talon]
         ostale_karte = deo_za_deljenje + deo_za_talon
 
+        print(len(karte_i1))
+        print(len(karte_i2))
+        print(len(talon))
+        print(len(ostale_karte))
 
 if __name__ == "__main__":
     novi_spil = Spil()
