@@ -24,17 +24,10 @@ class Spil():
         deo_za_talon = self.karte[0:a]
         deo_za_deljenje = self.karte[a:]
         talon = []
-        # print(deo_za_talon)
         talon.append(random.sample(deo_za_talon, 4))
         print(talon)
-        
-
-    def deli(self):
-        pass
 
 
 novi_spil = Spil()
-#print(novi_spil.karte)
-# novi_spil.podeli()
 novi_spil.podeli()
 
