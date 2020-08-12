@@ -19,23 +19,22 @@ class Spil():
         return self.karte[random.randint(0, 51)]
 
     def podeli(self):
+        self.promesaj()
         a = random.randint(4, 40)
         deo_za_talon = self.karte[0:a]
         deo_za_deljenje = self.karte[a:]
         talon = []
-        for i in range(4):
-            if deo_za_talon[i] in talon:
-                continue
-            else:
-                talon.append(deo_za_talon[random.randint(0, len(deo_za_talon)-1)])
-
+        # print(deo_za_talon)
+        talon.append(random.sample(deo_za_talon, 4))
         print(talon)
+        
 
     def deli(self):
         pass
 
 
 novi_spil = Spil()
-novi_spil.promesaj()
+#print(novi_spil.karte)
+# novi_spil.podeli()
 novi_spil.podeli()
 
