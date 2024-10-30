@@ -1,8 +1,9 @@
 import random
+import emojis
 
 
 class Spil():
-    znakovi = ['karo', 'pik', 'herc', 'tref']
+    znakovi = ['\u2666', '\u2660', '\u2665', '\u2663']
     brojevi = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'A', 'J', 'Q', 'K']
     karte = []
 
@@ -20,7 +21,7 @@ class Spil():
 
     def podeli(self):
         self.promesaj()
-        a = random.randint(4, 40)
+        a = random.randint(4, 40)  # secenje spila
         deo_za_talon = self.karte[0:a]
         deo_za_deljenje = self.karte[a:]
         karte_i1 = random.sample(deo_za_deljenje, 6)
@@ -31,9 +32,9 @@ class Spil():
         deo_za_talon = [x for x in deo_za_talon if x not in talon]
         ostale_karte = deo_za_deljenje + deo_za_talon
 
-        print(len(karte_i1))
-        print(len(karte_i2))
-        print(len(talon))
+        print('Igrac #1: {}'.format(karte_i1))
+        print('Igrac #2: {}'.format(karte_i2))
+        print('Talon: {}'.format(talon))
         print(len(ostale_karte))
 
 if __name__ == "__main__":
